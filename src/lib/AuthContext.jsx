@@ -1,6 +1,7 @@
 import React, { createContext, useState, useContext, useEffect } from "react";
-import { Base44Error, createAxiosClient } from "@base44/sdk/dist/utils/axios-client";
+import { createAxiosClient } from "@base44/sdk/dist/utils/axios-client";
 import { appParams } from "./app-params";
+import { base44 } from "../api/base44Client";
 
 const AuthContext = createContext();
 
@@ -90,7 +91,7 @@ export const AuthProvider = ({ children }) => {
     try {
       // Now check if the user is authenticated
       setIsLoadingAuth(true);
-      const currentUser = await Base44Error.auth.me();
+      const currentUser = await base44.auth.me();
       setUser(currentUser);
       setIsAuthenticated(true);
       setIsLoadingAuth(false);

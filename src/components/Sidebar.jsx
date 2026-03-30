@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { Search, X, BookOpen } from "lucide-react";
+import { BookOpen, Search, X } from "lucide-react";
 
 export default function Sidebar({ topics, activeId, onSelect, searchQuery, onSearch, isOpen, onClose }) {
   return (
